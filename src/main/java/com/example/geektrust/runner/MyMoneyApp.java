@@ -8,7 +8,6 @@ import com.example.geektrust.factory.CommandFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,15 +33,12 @@ public class MyMoneyApp {
         }
     }
 
-    public void loadCommandsFromFile(String filepath) throws IOException {
+    public void loadCommandsFromFile(String filepath) {
         try {
-            Files.readAllLines(Paths.get(filepath))
-                    .forEach(commandString ->
-                            this.commands.add(createCommand(commandString.trim())));
+            Files.readAllLines(Paths.get(filepath)).forEach(commandString -> this.commands.add(createCommand(commandString.trim())));
         } catch (IOException e) {
             System.out.println("No such file exists : " + filepath);
         }
-
     }
 
     private Command createCommand(String commandString) {

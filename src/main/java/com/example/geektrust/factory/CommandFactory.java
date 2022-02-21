@@ -13,8 +13,8 @@ public class CommandFactory {
         // todo : validate parameters if needed
         //  example: ALLOCATE 6000 3000 1000
         return Command.builder()
-                .parameters(new ArrayList<>(parameters.subList(1,parameters.size())))
                 .name(parameters.get(0))
+                .parameters(new ArrayList<>(parameters.subList(1,parameters.size())))
                 .build();
     }
 }

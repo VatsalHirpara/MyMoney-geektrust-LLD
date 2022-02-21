@@ -26,21 +26,6 @@ public class RebalanceCommandExecutor extends CommandExecutor {
 
     @Override
     protected void executeValidCommand(Command command, PortfolioTracker portfolioTracker) {
-        /*if (portfolioTracker.getPortfolioHistory().size() < 6) {
-            System.out.println("CANNOT_REBALANCE");
-            return;
-        }
-        Portfolio currentPortfolio = portfolioTracker.getCurrentPortfolio();
-        final int equity = currentPortfolio.getEquity();
-        final int debt = currentPortfolio.getDebt();
-        final int gold = currentPortfolio.getGold();
-        int total = equity + debt + gold;
-        Allocation allocation = portfolioTracker.getDesiredAssetAllocation();
-        currentPortfolio.setEquity((int) (total * allocation.getEquity()  / 100));
-        currentPortfolio.setDebt((int) (total * allocation.getDebt()  / 100));
-        currentPortfolio.setGold((int) (total * allocation.getGold()  / 100));
-        System.out.println(String.format("%d %d %d", currentPortfolio.getEquity(), currentPortfolio.getDebt(), currentPortfolio.getGold()));*/
-
         if (portfolioTracker.getPortfolioHistory().size() < 6) {
             System.out.println("CANNOT_REBALANCE");
             return;
@@ -50,7 +35,5 @@ public class RebalanceCommandExecutor extends CommandExecutor {
                 .collect(Collectors.toList());
         Portfolio rebalancedPortfolio = portfolios.get(portfolios.size()-1);
         System.out.println(String.format("%d %d %d", rebalancedPortfolio.getEquity(), rebalancedPortfolio.getDebt(), rebalancedPortfolio.getGold()));
-
     }
-
 }
