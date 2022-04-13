@@ -1,3 +1,7 @@
+A solution to low level design(LLD) problem : [My Money Manager](https://www.geektrust.com/challenge/my-money)
+
+
+
 # Pre-requisites
 * Java 1.8/1.11/1.15
 * Maven
