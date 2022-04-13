@@ -1,6 +1,6 @@
 A solution to low level design(LLD) problem : [My Money Manager](https://www.geektrust.com/challenge/my-money)
 
-
+It uses command design pattern and follows SOLID design principals
 
 # Pre-requisites
 * Java 1.8/1.11/1.15
