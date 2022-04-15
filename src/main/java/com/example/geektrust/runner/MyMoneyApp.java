@@ -37,12 +37,11 @@ public class MyMoneyApp {
         try {
             Files.readAllLines(Paths.get(filepath)).forEach(commandString -> this.commands.add(createCommand(commandString.trim())));
         } catch (IOException e) {
-            System.out.println("No such file exists : " + filepath);
+            System.out.println("No such file exists : " + filepath); // should be replaced with logger in real application
         }
     }
 
     private Command createCommand(String commandString) {
-        // todo: do we really need factory?
         return CommandFactory.createCommand(commandString);
     }
 }
